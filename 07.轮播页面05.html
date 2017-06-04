@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- 设置视口属性 -->
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>title</title>
+  <link rel="stylesheet" type="text/css" href="css/index.css" />
+</head>
+
+<body>
+  <!-- 轮播页面4 -->
+  <div class="scroll-page5-layout">
+    <!-- 标题 -->
+    <div class="title">
+      <h3>测试页面</h3>
+      <p>哪怕下刀子<br>我都会给你送过去的哦</p>
+      <div class="line"></div>
+    </div>
+    <!-- 星球-->
+    <div class="sphere"></div>
+    <!-- 内容部分 -->
+    <div class="content">
+      <!-- 背景 -->
+      <div class="bg"></div>
+      <!-- 熊 -->
+      <div class="bear">
+        <div class="shadow"></div>
+      </div>
+      <!-- 云 -->
+      <div class="cloud">
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="leaf"></div>
+        <div class="leaf"></div>
+        <div class="leaf"></div>
+        <div class="leaf"></div>
+        <div class="leaf"></div>
+        <div class="leaf"></div>
+        <div class="leaf"></div>
+        <div class="leaf"></div>
+        <div class="leaf"></div>
+        <div class="leaf"></div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
+<!-- 测试代码 页面打开之后 延迟一会 为 body中的 第一个 div 添加animateclass -->
+<script type="text/javascript">
+  window.onload = function () {
+    setTimeout(function () {
+      document.querySelector('body>div').classList.add('animate');
+    }, 1000)
+  }
+</script>

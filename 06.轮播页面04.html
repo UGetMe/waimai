@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- 设置视口属性 -->
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>title</title>
+  <link rel="stylesheet" type="text/css" href="css/index.css" />
+</head>
+
+<body>
+  <!-- 轮播页面4 -->
+  <div class="scroll-page4-layout">
+    <!-- 标题 -->
+    <div class="title">
+      <h3>百度外卖</h3>
+      <p>比什么吗外卖要好<br>可以试试看</p>
+      <div class="line"></div>
+    </div>
+    <!-- 星球-->
+    <div class="sphere"></div>
+    <!-- 内容部分 -->
+    <div class="content">
+      <!-- 背景 -->
+      <div class="bg"></div>
+      <!-- 熊 -->
+      <div class="bear">
+      </div>
+      <div class="card1"></div>
+      <div class="card2"></div>
+      <div class="card3"></div>
+    </div>
+  </div>
+</body>
+
+</html>
+<!-- 测试代码 页面打开之后 延迟一会 为 body中的 第一个 div 添加animateclass -->
+<script type="text/javascript">
+  window.onload = function () {
+    setTimeout(function () {
+      document.querySelector('body>div').classList.add('animate');
+    }, 1000)
+  }
+</script>

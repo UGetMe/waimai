@@ -1,0 +1,1800 @@
+@import 'normalize6.0.scss';
+@import 'base.scss';
+// 设置 高度 100%
+html,
+body {
+    height: 100%;
+}
+
+// 首页布局
+.loading-layout {
+    height: 100%;
+    background-color: #ffece9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: (233/32)+rem;
+    .rider {
+        width: (154rem/32);
+        height: (121rem/32);
+        background: url('../images/loading/rider1_.png') no-repeat center/100% 100%;
+    }
+    .progress {
+        width: (425rem/32);
+        height: (28rem/32);
+        border: (6rem/32) solid black;
+        border-radius: (28rem/32);
+        position: relative;
+        margin-top: (6rem/32);
+        .step {
+            height: 100%;
+            width: 50%;
+            background-color: #ff2947;
+            position: absolute;
+            right: 0px;
+        }
+    }
+    .info {
+        width: (220rem/32);
+        height: (28rem/32);
+        background: url('../images/loading/loading-txt.png')no-repeat center /100% 100%; // margin-top: (40rem/32);
+        margin-top: p2r(40);
+    }
+    .logo {
+        width: p2r(162);
+        height: p2r(39);
+        background: url('../images/loading/waimai-logo.png')no-repeat center /100% 100%;
+        position: absolute;
+        bottom: p2r(117);
+    }
+    .desc {
+        text-align: center;
+        color: #ed8895;
+        position: absolute;
+        width: 100%;
+        bottom: p2r(70);
+    }
+}
+
+// 动画的开始
+.loading-layout {
+    // padding-right: p2r(107);
+    .rider {
+        // 放到最右边
+        align-self: flex-end;
+        margin-right: p2r(80);
+    }
+    .progress {
+        .step {
+            width: 20%;
+        }
+    }
+}
+
+// 当顶级盒子 有了 animateclass时 就开始动画
+.loading-layout.animate {
+    .rider {
+        // transform: translateX(p2r(-300));
+        // transition: all 1s linear;
+        //  动画播放之后 跳回去 
+        //  forwards 动画播放完毕之后 停留在 最终的状态
+        animation: riderDrive 1s linear forwards;
+    }
+    .progress {
+        .step {
+            width: 100%;
+            transition: all 1s linear;
+        }
+    } // 当上面两个动画播放完毕之后 自己 消失
+    opacity: 0;
+    transition: all .5s 1s;
+}
+
+@keyframes riderDrive {
+    10% {
+        transform: translateX(p2r(-30)) translateY(p2r(-5));
+    }
+    20% {
+        transform: translateX(p2r(-60)) translateY(p2r(5));
+    }
+    30% {
+        transform: translateX(p2r(-90)) translateY(p2r(-5));
+    }
+    40% {
+        transform: translateX(p2r(-120)) translateY(p2r(5));
+    }
+    50% {
+        transform: translateX(p2r(-150)) translateY(p2r(-5));
+    }
+    60% {
+        transform: translateX(p2r(-180)) translateY(p2r(5));
+    }
+    70% {
+        transform: translateX(p2r(-210)) translateY(p2r(-5));
+    }
+    80% {
+        transform: translateX(p2r(-240)) translateY(p2r(5));
+    }
+    90% {
+        transform: translateX(p2r(-270)) translateY(p2r(-5));
+    }
+    100% {
+        transform: translateX(p2r(-300)) translateY(0);
+    }
+}
+
+// 第二个页面
+.go-layout {
+    height: 100%;
+    background-color: deepskyblue;
+    .clouds {
+        width: p2r(640);
+        height: p2r(673);
+        position: absolute;
+        bottom: 0;
+        background: url('../images/page1/clouds.png')no-repeat center/100% 100%;
+    }
+    .grass1 {
+        width: p2r(640);
+        height: p2r(396);
+        position: absolute;
+        bottom: 0;
+        background: url('../images/page1/grass1.png')no-repeat center/100% 100%;
+    }
+    .grass2 {
+        width: p2r(640);
+        height: p2r(228);
+        position: absolute;
+        bottom: 0;
+        background: url('../images/page1/grass2.png')no-repeat center/100% 100%;
+    } // 按钮
+    .btn-container {
+        width: p2r(208);
+        height: p2r(208);
+        background: url('../images/page1/bear-btn-aft.png') no-repeat center/p2r(124) p2r(113);
+        position: absolute;
+        bottom: p2r(86);
+        left: 50%;
+        margin-left: p2r(-208/2);
+        .circle1 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('../images/page1/circle1.png')no-repeat center/100% 100%;
+        }
+        .circle2 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('../images/page1/circle2.png')no-repeat center/100% 100%;
+        }
+    } // 底部的文字
+    .waimai-load {
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        bottom: p2r(38);
+    } // 树
+    .tree {
+        width: p2r(599);
+        height: p2r(71);
+        background: url('../images/page1/trees.png')no-repeat center/100% 100%;
+        position: absolute;
+        bottom: p2r(352);
+        left: 50%;
+        margin-left: p2r(-599/2);
+    }
+    .bear-title {
+        width: p2r(397);
+        height: p2r(244);
+        background: url('../images/page1/theme-title.png')no-repeat center /100% 100%;
+        position: absolute;
+        top: p2r(42);
+        left: 50%;
+        margin-left: p2r(-397/2);
+        .bear-hello {
+            width: p2r(75);
+            height: p2r(70);
+            position: absolute;
+            top: p2r(20);
+            right: p2r(8);
+            background: url('../images/page1/hello.png')no-repeat center/100% 100%;
+        }
+    }
+    .bear-box {
+        width: p2r(167);
+        height: p2r(279);
+        position: absolute;
+        bottom: p2r(346); // 开摩托车的熊
+        left: 50%;
+        margin-left: p2r(-167/2);
+        .bear {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background: url('../images/page1/rider2.png')no-repeat center /100% 100%;
+        }
+        .smoke {
+            position: absolute;
+            bottom: 0;
+            width: p2r(167);
+            height: p2r(32);
+            background: url('../images/page1/jet1.png')no-repeat center /100% 100%;
+        }
+    }
+}
+
+body {
+    overflow: hidden;
+}
+
+// 动画的初始状态
+.go-layout {
+    .grass1 {
+        height: p2r(100);
+    }
+    .grass2 {
+        opacity: 0;
+        transform: scaleX(1.5);
+    }
+    .tree {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    .btn-container {
+        opacity: 0;
+    }
+    .bear-title {
+        opacity: 0;
+        transform: translateY(-100%);
+        .bear-hello {
+            transform: scale(0, 0);
+        }
+    } //  默认把熊 移上去 隐藏起来
+    .bear-box {
+        opacity: 0;
+        transform: translateY(-30%);
+    }
+}
+
+// 通过 animate来触发动画
+.go-layout.animate {
+    .grass1 {
+        height: p2r(396);
+        transition: all .5s;
+    }
+    .grass2 {
+        opacity: 1;
+        transform: none;
+        transition: all .5s .5s;
+    }
+    .tree {
+        //  动画播放完毕之后 停留在 结束的状态  forwards
+        animation: treeUpDown .5s 1s forwards;
+    }
+    .btn-container {
+        opacity: 1;
+        transition: all .5s .5s;
+        .circle2 {
+            animation: rotateBtn 1s infinite linear;
+        }
+    }
+    .bear-title {
+        opacity: 1;
+        transform: none;
+        transition: all .5s 2s;
+        .bear-hello {
+            animation: helloBigSmall .5s 2.5s linear forwards;
+        }
+    }
+    .bear-box {
+        opacity: 1;
+        transform: none;
+        transition: all .5s 1.5s;
+        .bear {
+            animation: bearUpDown .5s linear infinite;
+        }
+        .smoke {
+            animation: smokeBig .5s .25s linear infinite;
+        }
+    }
+}
+
+@keyframes treeUpDown {
+    60% {
+        transform: translateY(10%);
+    }
+    70% {
+        transform: translateY(-10%);
+    }
+    80% {
+        transform: translateY(10%);
+    }
+    90% {
+        transform: translateY(-10%);
+    }
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes rotateBtn {
+    from {}
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes helloBigSmall {
+    90% {
+        transform: scale(1.2, 1.2);
+    }
+    100% {
+        transform: none;
+    }
+}
+
+@keyframes bearUpDown {
+    50% {
+        transform: translateY(-10%);
+    }
+    100% {
+        transform: none;
+    }
+}
+
+@keyframes smokeBig {
+    from {
+        opacity: 0;
+        transform: scale(0, 0);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+// 轮播页面01
+.scroll-page1-layout {
+    height: 100%;
+    background-color: #be8651; // 由于 尺寸跟body是完全一样的 这里相对定位 可以省略
+    .title {
+        color: white;
+        position: absolute;
+        left: p2r(32);
+        top: p2r(32);
+        padding-left: p2r(15);
+        h3 {
+            font-size: p2r(64);
+        }
+        p {
+            font-size: p2r(24);
+            padding-top: p2r(12);
+        }
+        .line {
+            width: p2r(5);
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: white;
+        }
+    } // 球的样式
+    .sphere {
+        width: p2r(640);
+        height: p2r(356);
+        position: absolute;
+        bottom: 0;
+        background: url('../images/page2/sphere1.png')no-repeat center/100% 100%;
+        z-index: 1;
+    } // 熊
+    .bear {
+        @include size(178,
+        134);
+        position: absolute;
+        bottom: 0;
+        right: p2r(38); // background: url('../images/page2/bear1.png')no-repeat center/100% 100%;
+        // 使用混入来生成
+        @include bg('../images/page2/bear1.png');
+        z-index: 1;
+    } // 轮播页面1
+    .page1 {
+        .bg {
+            @include size(576,
+            573);
+            @include bg('../images/page2/bg1.png');
+            position: absolute;
+            bottom: p2r(252);
+            left: 50%;
+            margin-left: p2r(-576/2);
+            z-index: 0;
+        } // 信息框
+        .message-bg {
+            @include size(363,
+            119);
+            position: absolute;
+            bottom: p2r(140);
+            right: p2r(140);
+            @include bg('../images/page2/txt-bubbl.png');
+            z-index: 1; // 开启弹性布局 让内容居中
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .message {
+                @include size(250,
+                31);
+                @include bg('../images/page2/txt-work.png');
+                z-index: 1;
+            }
+        }
+        .person {
+            @include size(439,
+            349);
+            @include bg('../images/page2/front1.png');
+            position: absolute;
+            bottom: p2r(290);
+            left: 50%;
+            margin-left: p2r(-439/2);
+            z-index: 2;
+            .file {
+                @include size(85,
+                50);
+                background-image: url('../images/page2/papers.png');
+                background-position: bottom right;
+                background-size: p2r(115) p2r(114);
+                position: absolute;
+                bottom: p2r(104);
+                left: p2r(27);
+                .page1 {
+                    @include size(86,
+                    26);
+                    background-image: url('../images/page2/papers.png');
+                    background-size: p2r(115) p2r(114);
+                    background-position: p2r(0) p2r(-32);
+                    position: absolute;
+                    bottom: p2r(45);
+                    left: p2r(-70);
+                }
+                .page2 {
+                    @include size(64,
+                    20);
+                    background-image: url('../images/page2/papers.png');
+                    background-position: p2r(-45) p2r(0);
+                    background-size: p2r(115) p2r(114);
+                    position: absolute;
+                    bottom: p2r(80);
+                    right: 0;
+                }
+            }
+        }
+    } // 轮播页面2
+    .page2 {
+        .bg {
+            @include size(582,
+            520);
+            @include bg('../images/page2/bg2.png');
+            position: absolute;
+            bottom: p2r(252);
+            left: 50%;
+            margin-left: p2r(-582/2);
+            z-index: 0;
+        } // 信息框
+        .message-bg {
+            @include size(363,
+            119);
+            position: absolute;
+            bottom: p2r(140);
+            right: p2r(140);
+            @include bg('../images/page2/txt-bubbl.png');
+            z-index: 1; // 开启弹性布局 让内容居中
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .message {
+                @include size(250,
+                31);
+                @include bg('../images/page2/txt-life.png');
+                z-index: 1;
+            }
+        }
+        .person {
+            @include size(436,
+            332);
+            @include bg('../images/page2/relax.png');
+            position: absolute;
+            bottom: p2r(270);
+            left: 50%;
+            margin-left: p2r(-436/2);
+            z-index: 2;
+            .leg1 {
+                @include size(113,
+                24);
+                @include bg('../images/page2/leg1.png');
+                position: absolute;
+                bottom: p2r(110);
+                left: p2r(195);
+            }
+            .leg2 {
+                @include size(85,
+                71);
+                @include bg('../images/page2/leg2.png');
+                position: absolute;
+                bottom: p2r(120);
+                left: p2r(193);
+            }
+        }
+    } // 轮播页面3 
+    .page3 {
+        .bg {
+            @include size(561,
+            516);
+            @include bg('../images/page2/bg3.png');
+            position: absolute;
+            bottom: p2r(270);
+            left: 50%;
+            margin-left: p2r(-561/2);
+            z-index: 0;
+        } // 信息框
+        .message-bg {
+            @include size(363,
+            119);
+            position: absolute;
+            bottom: p2r(140);
+            right: p2r(140);
+            @include bg('../images/page2/txt-bubbl.png');
+            z-index: 1; // 开启弹性布局 让内容居中
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .message {
+                @include size(250,
+                31);
+                @include bg('../images/page2/txt-life.png');
+                z-index: 1;
+            }
+        }
+        .person {
+            @include size(503,
+            229);
+            @include bg('../images/page2/person.png');
+            position: absolute;
+            bottom: p2r(300);
+            left: 50%;
+            margin-left: p2r(-503/2);
+            z-index: 2;
+            .message1 {
+                @include size(92,
+                83);
+                @include bg('../images/page2/word1.png');
+                position: absolute;
+                bottom: p2r(194);
+                left: p2r(-7);
+            }
+            .message2 {
+                @include size(77,
+                70);
+                @include bg('../images/page2/word2.png');
+                position: absolute;
+                bottom: p2r(245);
+                left: p2r(115);
+            }
+            .message3 {
+                @include size(115,
+                104);
+                @include bg('../images/page2/word3.png');
+                position: absolute;
+                bottom: p2r(220);
+                right: p2r(130);
+            }
+            .message4 {
+                @include size(79,
+                73);
+                @include bg('../images/page2/word4.png');
+                position: absolute;
+                bottom: p2r(230);
+                right: p2r(12);
+            }
+        }
+    }
+}
+
+//  轮播页面02
+.scroll-page2-layout {
+    height: 100%;
+    background-color: #ee4143; // 由于 尺寸跟body是完全一样的 这里相对定位 可以省略
+    .title {
+        color: white;
+        position: absolute;
+        left: p2r(32);
+        top: p2r(32);
+        padding-left: p2r(15);
+        h3 {
+            font-size: p2r(64);
+        }
+        p {
+            font-size: p2r(24);
+            padding-top: p2r(12);
+        }
+        .line {
+            width: p2r(5);
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: white;
+        }
+    } // 球的样式
+    .sphere {
+        width: p2r(640);
+        height: p2r(356);
+        position: absolute;
+        bottom: 0;
+        background: url('../images/page3/sphere2.png')no-repeat center/100% 100%;
+        z-index: 1;
+    } // 内容部分
+    .content {
+        .bg {
+            @include size(592,
+            490);
+            @include bg('../images/page3/bg4_.png');
+            @include cbbg(592,
+            300);
+        }
+        .bear {
+            @include size(227,
+            336);
+            background-image: url('../images/page3/bear2.png');
+            background-repeat: no-repeat;
+            background-position: p2r(-103) p2r(-96);
+            background-size: p2r(368) p2r(427);
+            @include cbbg(227,
+            310);
+            .hand1 {
+                @include size(74,
+                77);
+                @include bg('../images/page3/hand-left_.png');
+                position: absolute;
+                left: p2r(30);
+                top: p2r(180);
+            }
+            .hand2 {
+                @include size(74,
+                77);
+                @include bg('../images/page3/hand-right.png');
+                position: absolute;
+                right: p2r(30);
+                top: p2r(180);
+            }
+            .face1 {
+                @include size(102,
+                102);
+                @include bg('../images/page3/face1.png');
+                position: absolute;
+                left: p2r(-102);
+                top: p2r(0);
+            }
+            .face2 {
+                @include size(101,
+                102);
+                @include bg('../images/page3/face2.png');
+                position: absolute;
+                right: p2r(-102/2);
+                top: p2r(-102);
+            }
+        }
+        .table {
+            @include size(514,
+            258);
+            @include bg('../images/page3/table.png'); // position: absolute;
+            // left: 50%;
+            // margin-left: p2r(-514/2);
+            // bottom: p2r(140);
+            @include cbbg(514,
+            140);
+            z-index: 2;
+        }
+        .food {
+            @include size(354,
+            152);
+            @include bg('../images/page3/foods.png'); // 
+            @include cbbg(354,
+            330);
+            z-index: 3;
+        }
+    }
+}
+
+// 轮播页面3 
+.scroll-page3-layout {
+    height: 100%;
+    background-color: #dd8a03; // 由于 尺寸跟body是完全一样的 这里相对定位 可以省略
+    .title {
+        color: white;
+        position: absolute;
+        left: p2r(32);
+        top: p2r(32);
+        padding-left: p2r(15);
+        h3 {
+            font-size: p2r(64);
+        }
+        p {
+            font-size: p2r(24);
+            padding-top: p2r(12);
+        }
+        .line {
+            width: p2r(5);
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: white;
+        }
+    } // 球的样式
+    .sphere {
+        width: p2r(640);
+        height: p2r(356);
+        position: absolute;
+        bottom: 0;
+        background: url('../images/page4/sphere3.png')no-repeat center/100% 100%;
+        z-index: 1;
+    } // 内容部分
+    .content {
+        .bg {
+            @include size(592,
+            580);
+            @include bg('../images/page4/bg5.png');
+            @include cbbg(592,
+            300);
+        }
+        .bear {
+            @include size(206,
+            321);
+            @include bg('../images/page4/bear3.png');
+            @include cbbg(206,
+            195);
+            z-index: 2;
+        }
+        .license {
+            @include size(197,
+            140);
+            @include bg('../images/page4/license.png');
+            left: p2r(40);
+            bottom: p2r(500);
+            position: absolute;
+        }
+        .oil {
+            @include size(205,
+            107);
+            @include bg('../images/page4/oil.png');
+            left: p2r(225);
+            bottom: p2r(660);
+            position: absolute;
+        }
+        .evil {
+            @include size(198,
+            163);
+            @include bg('../images/page4/evil2.png');
+            right: p2r(30);
+            bottom: p2r(480);
+            position: absolute;
+        }
+    }
+}
+
+// 轮播页面4
+.scroll-page4-layout {
+    height: 100%;
+    background-color: #3fa100; // 由于 尺寸跟body是完全一样的 这里相对定位 可以省略
+    .title {
+        color: white;
+        position: absolute;
+        left: p2r(32);
+        top: p2r(32);
+        padding-left: p2r(15);
+        h3 {
+            font-size: p2r(64);
+        }
+        p {
+            font-size: p2r(24);
+            padding-top: p2r(12);
+        }
+        .line {
+            width: p2r(5);
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: white;
+        }
+    } // 球的样式
+    .sphere {
+        width: p2r(640);
+        height: p2r(356);
+        position: absolute;
+        bottom: 0;
+        background: url('../images/page5/sphere4.png')no-repeat center/100% 100%;
+        z-index: 1;
+    } // 内容部分
+    .content {
+        .bg {
+            @include size(588,
+            333);
+            @include bg('../images/page5/bg6.png');
+            @include cbbg(588,
+            300);
+        }
+        .bear {
+            @include size(309,
+            325);
+            @include bg('../images/page5/bear4.png');
+            position: absolute;
+            bottom: p2r(170);
+            left: p2r(200);
+            z-index: 2;
+        }
+        .card1 {
+            @include size(160,
+            175);
+            @include bg('../images/page5/card1.png');
+            left: p2r(32);
+            bottom: p2r(435);
+            position: absolute;
+            z-index: 2;
+        }
+        .card2 {
+            @include size(161,
+            209);
+            @include bg('../images/page5/card2.png');
+            left: p2r(240);
+            bottom: p2r(530);
+            position: absolute;
+        }
+        .card3 {
+            @include size(167,
+            184);
+            @include bg('../images/page5/card3.png');
+            right: p2r(45);
+            bottom: p2r(420);
+            position: absolute;
+        }
+    }
+}
+
+// 轮播页面5
+.scroll-page5-layout {
+    height: 100%;
+    background-color: #0098cf; // 由于 尺寸跟body是完全一样的 这里相对定位 可以省略
+    .title {
+        color: white;
+        position: absolute;
+        left: p2r(32);
+        top: p2r(32);
+        padding-left: p2r(15);
+        h3 {
+            font-size: p2r(64);
+        }
+        p {
+            font-size: p2r(24);
+            padding-top: p2r(12);
+        }
+        .line {
+            width: p2r(5);
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: white;
+        }
+    } // 球的样式
+    .sphere {
+        width: p2r(640);
+        height: p2r(356);
+        position: absolute;
+        bottom: 0;
+        background: url('../images/page6/sphere5.png')no-repeat center/100% 100%;
+        z-index: 1;
+    } // 内容部分
+    .content {
+        .bg {
+            @include size(594,
+            493);
+            @include bg('../images/page6/bg7.png');
+            @include cbbg(594,
+            300);
+        }
+        .bear {
+            @include size(230,
+            390);
+            @include bg('../images/page6/rider2.png');
+            @include cbbg(230,
+            175);
+            z-index: 2;
+            .shadow {
+                @include size(114,
+                26);
+                @include bg('../images/page6/shadow.png');
+                @include cbbg(114,
+                0);
+            }
+        }
+        .cloud {
+            @include size(432,
+            160);
+            @include bg('../images/page6/weather-cloud.png');
+            @include cbbg(432,
+            640);
+        }
+    }
+}
+
+// 轮播页面6
+.scroll-page6-layout {
+    height: 100%;
+    background-color: #b527a0; // 由于 尺寸跟body是完全一样的 这里相对定位 可以省略
+    .title {
+        color: white;
+        position: absolute;
+        left: p2r(32);
+        top: p2r(32);
+        padding-left: p2r(15);
+        h3 {
+            font-size: p2r(64);
+        }
+        p {
+            font-size: p2r(24);
+            padding-top: p2r(12);
+        }
+        .line {
+            width: p2r(5);
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: white;
+        }
+    } // 球的样式
+    .sphere {
+        width: p2r(640);
+        height: p2r(356);
+        position: absolute;
+        bottom: 0;
+        background: url('../images/page7/sphere6.png')no-repeat center/100% 100%;
+        z-index: 1;
+    } // 内容部分
+    .content {
+        .bg {
+            @include size(588,
+            333);
+            @include bg('../images/page7/bg8.png');
+            @include cbbg(588,
+            300);
+        }
+        .bear {
+            @include size(285,
+            328);
+            @include bg('../images/page7/bear5.png');
+            @include cbbg(285,
+            200);
+            z-index: 2;
+        } // 礼物容器 熊的头顶
+        .gifts {
+            position: absolute;
+            bottom: p2r(515);
+            left: 50%;
+            z-index: 2; // 设置的是 img的 容器盒子 
+            >div {
+                position: absolute;
+                left: 50%;
+                &:nth-child(1)>img {
+                    @include size(35,
+                    29);
+                    transform: rotate(-28deg);
+                }
+                &:nth-child(2)>img {
+                    @include size(93,
+                    79);
+                    transform: rotate(-56deg);
+                }
+                &:nth-child(3)>img {
+                    @include size(72,
+                    64);
+                    transform: rotate(-84deg);
+                }
+                &:nth-child(4)>img {
+                    @include size(91,
+                    73);
+                    transform: rotate(-112deg);
+                }
+                &:nth-child(5)>img {
+                    @include size(99,
+                    65);
+                    transform: rotate(-140deg);
+                }
+                &:nth-child(6)>img {
+                    @include size(107,
+                    80);
+                    transform: rotate(-160deg);
+                }
+                &:nth-child(7)>img {
+                    @include size(107,
+                    80);
+                    transform: rotate(-190deg);
+                }
+                &:nth-child(8)>img {
+                    @include size(88,
+                    64);
+                    transform: rotate(-224deg);
+                }
+                &:nth-child(9)>img {
+                    @include size(78,
+                    50);
+                    transform: rotate(-252deg);
+                }
+                &:nth-child(10)>img {
+                    @include size(49,
+                    37);
+                    transform: rotate(-280deg);
+                }
+                &:nth-child(11)>img {
+                    @include size(51,
+                    31);
+                    transform: rotate(-308deg);
+                }
+                &:nth-child(12)>img {
+                    @include size(37,
+                    23);
+                    transform: rotate(-336deg);
+                }
+            } // 让礼物的容器 往四周发散
+            >div {
+                position: absolute;
+                left: 50%;
+                &:nth-child(1) {
+                    @include size(35,
+                    29);
+                    margin-left: p2r(-35/2);
+                    transform: rotate(28deg) translateY(p2r(240));
+                }
+                &:nth-child(2) {
+                    @include size(93,
+                    79);
+                    margin-left: p2r(-93/2);
+                    transform: rotate(56deg) translateY(p2r(240));
+                }
+                &:nth-child(3) {
+                    @include size(72,
+                    64);
+                    margin-left: p2r(-72/2);
+                    transform: rotate(84deg) translateY(p2r(240));
+                }
+                &:nth-child(4) {
+                    @include size(91,
+                    73);
+                    margin-left: p2r(-91/2);
+                    transform: rotate(112deg) translateY(p2r(240));
+                }
+                &:nth-child(5) {
+                    @include size(99,
+                    65);
+                    margin-left: p2r(-99/2);
+                    transform: rotate(140deg) translateY(p2r(240));
+                }
+                &:nth-child(6) {
+                    @include size(107,
+                    80);
+                    margin-left: p2r(-10/27);
+                    transform: rotate(160deg) translateY(p2r(250));
+                }
+                &:nth-child(7) {
+                    @include size(107,
+                    80);
+                    margin-left: p2r(-10/27);
+                    transform: rotate(190deg) translateY(p2r(240));
+                }
+                &:nth-child(8) {
+                    @include size(88,
+                    64);
+                    margin-left: p2r(-88/2);
+                    transform: rotate(224deg) translateY(p2r(240));
+                }
+                &:nth-child(9) {
+                    @include size(78,
+                    50);
+                    margin-left: p2r(-78/2);
+                    transform: rotate(252deg) translateY(p2r(240));
+                }
+                &:nth-child(10) {
+                    @include size(49,
+                    37);
+                    margin-left: p2r(-49/2);
+                    transform: rotate(280deg) translateY(p2r(240));
+                }
+                &:nth-child(11) {
+                    @include size(51,
+                    31);
+                    margin-left: p2r(-51/2);
+                    transform: rotate(308deg) translateY(p2r(240));
+                }
+                &:nth-child(12) {
+                    @include size(37,
+                    23);
+                    margin-left: p2r(-37/2);
+                    transform: rotate(336deg) translateY(p2r(240));
+                }
+            }
+        }
+    }
+}
+
+// 轮播页面7
+.scroll-page7-layout {
+    height: 100%;
+    background-color: #19072a; // 由于 尺寸跟body是完全一样的 这里相对定位 可以省略
+    .title {
+        color: white;
+        position: absolute;
+        left: p2r(32);
+        top: p2r(32);
+        padding-left: p2r(15);
+        h3 {
+            font-size: p2r(64);
+        }
+        p {
+            font-size: p2r(24);
+            padding-top: p2r(12);
+        }
+        .line {
+            width: p2r(5);
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: white;
+        }
+    } // 球的样式
+    .sphere {
+        width: p2r(640);
+        height: p2r(384);
+        position: absolute;
+        bottom: 0;
+        background: url('../images/page8/sphere7.png')no-repeat center/100% 100%;
+        z-index: 1;
+    } // 内容部分
+    .content {
+        .streetlight {
+            @include size(80,
+            443);
+            @include bg('../images/page8/streetlight.png');
+            position: absolute;
+            bottom: p2r(300);
+            left: p2r(240);
+            .lamplight {
+                @include size(437,
+                427);
+                @include bg('../images/page8/lamplight.png');
+                top: p2r(10.8);
+                position: absolute;
+                left: p2r(-140.8);
+            }
+        }
+        .bear {
+            @include size(276,
+            271);
+            @include bg('../images/page8/bear6.png');
+            position: absolute;
+            left: p2r(228);
+            bottom: p2r(280);
+            z-index: 2;
+        } // 礼物容器 熊的头顶
+        .moto {
+            @include size(200,
+            137);
+            @include bg('../images/page8/moto.png');
+            position: absolute;
+            bottom: p2r(335);
+            left: p2r(125);
+        } // 分享
+        .share {
+            @include size(379,
+            113);
+            @include bg('../images/page8/share.png');
+            @include cbbg(379,
+            140);
+            z-index: 2;
+        }
+        .url {
+            position: absolute;
+            bottom: p2r(70);
+            width: 100%;
+            text-align: center;
+            font-size: p2r(24);
+            color: #b579d6;
+            z-index: 2;
+        }
+    }
+}
+
+body>div {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+// 设置页面层级 
+.loading-layout {
+    z-index: 5;
+}
+
+.go-layout {
+    z-index: 4;
+}
+
+// ---------------------分割线 除1 2 页的动画效果
+// 从右往左 透明度 变为1
+@keyframes right2Left {
+    from {
+        // 默认 往右移动一些
+        transform: translateX(100%);
+    }
+    to {
+        // 还原到左边即可
+        transform: none;
+        opacity: 1;
+    }
+}
+
+// 高度还原为100%
+@keyframes height2Hun {
+    to {
+        height: 100%;
+        opacity: 1;
+    }
+}
+
+// 所有页面的 标题动画  初始状态
+// class 以 scroll-page开头的div 都设置这个样式
+div[class^='scroll-page'] {
+    .title {
+        p {
+            opacity: 0;
+        }
+        h3 {
+            opacity: 0;
+        }
+        .line {
+            height: 0%;
+        }
+    }
+}
+
+// 所有页面的 标题动画  动画样式
+div[class^='scroll-page'].animate {
+    .title {
+        p {
+            animation: right2Left .5s forwards;
+        }
+        h3 {
+            animation: right2Left .5s forwards;
+        }
+        .line {
+            animation: height2Hun .5s forwards;
+        }
+    }
+}
+
+// 旋转出现的动画 并且最后消失了
+@keyframes rotateInAndOut {
+    0% {
+        transform: rotate(90deg);
+        transform-origin: 50% 200%;
+    }
+    20% {
+        transform: rotate(-5deg);
+        opacity: 1;
+        transform-origin: 50% 200%;
+    }
+    25% {
+        transform: rotate(0deg);
+        opacity: 1;
+        transform-origin: 50% 200%;
+    }
+    70% {
+        transform: rotate(0);
+        opacity: 1;
+        transform-origin: 50% 200%;
+    }
+    75% {
+        transform: rotate(5deg);
+        opacity: 1;
+        transform-origin: 50% 200%;
+    }
+    100% {
+        transform: rotate(-90deg);
+        opacity: 0;
+        transform-origin: 50% 200%;
+    }
+}
+
+// 旋转出现提示文本 最后消失
+@keyframes rotateRB {
+    0% {
+        transform: rotate(90deg);
+        transform-origin: right bottom;
+    }
+    20% {
+        transform: rotate(-50deg);
+        opacity: 1;
+        transform-origin: right bottom;
+    }
+    25% {
+        transform: rotate(0deg);
+        opacity: 1;
+        transform-origin: right bottom;
+    }
+    70% {
+        transform: rotate(0deg);
+        opacity: 1;
+        transform-origin: right bottom;
+    }
+    75% {
+        transform: rotate(50deg);
+        opacity: 1;
+        transform-origin: right bottom;
+    }
+    100% {
+        transform: rotate(-90deg);
+        opacity: 0;
+        transform-origin: right bottom;
+    }
+}
+
+// 旋转出现的动画 最后不消失
+@keyframes rotateIn {
+    0% {
+        transform: rotate(90deg);
+        transform-origin: 50% 200%;
+    }
+    90% {
+        transform: rotate(-5deg);
+        transform-origin: 50% 200%;
+        opacity: 1;
+    }
+    100% {
+        transform: rotate(0deg);
+        opacity: 1;
+        transform-origin: 50% 200%;
+    }
+}
+
+// 旋转出现提示文本 不消失
+@keyframes rotateRBNotOut {
+    0% {
+        transform: rotate(90deg);
+        transform-origin: right bottom;
+    }
+    90% {
+        transform: rotate(-5deg);
+        opacity: 1;
+        transform-origin: right bottom;
+    }
+    100% {
+        transform: rotate(0deg);
+        opacity: 1;
+        transform-origin: right bottom;
+    }
+}
+
+// 抖动效果
+@keyframes shake {
+    25% {
+        transform: translate(2%, 0);
+    }
+    50% {
+        transform: translate(0, -2%);
+    }
+    75% {
+        transform: translate(-2%, 0%);
+    }
+    100% {
+        transform: translate(0%, 2%);
+    }
+}
+
+// 左右晃动效果
+@keyframes left2Right {
+    50% {
+        transform: translateX(-50%);
+    }
+    100% {
+        transform: none;
+    }
+}
+
+// 腿 旋转回去
+@keyframes legRotateback {
+    // 
+    to {
+        transform: none;
+    }
+}
+
+// 从上往下移动
+@keyframes top2Bottom {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: none;
+        opacity: 1;
+    }
+}
+
+// 从下往上
+@keyframes bottom2Top {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: none;
+        opacity: 1;
+    }
+}
+
+// 从小变大
+@keyframes small2Big {
+    0% {
+        transform: scale(0, 0);
+    }
+    90% {
+        transform: scale(1.5, 1.5);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1, 1);
+        opacity: 1;
+    }
+}
+
+// 晃动的小手
+@keyframes leftHand {
+    0% {
+        transform-origin: left bottom;
+    }
+    50% {
+        transform: rotate(10deg);
+        transform-origin: left bottom;
+    }
+    100% {
+        transform-origin: left bottom;
+    }
+}
+
+@keyframes rightHand {
+    0% {
+        transform-origin: right bottom;
+    }
+    50% {
+        transform: rotate(-10deg);
+        transform-origin: right bottom;
+    }
+    100% {
+        transform-origin: right bottom;
+    }
+}
+
+// 下雪的动画效果
+@keyframes snowDown {
+    to {
+        transform: translateY(1500%) translateX(-100%);
+        opacity: 1;
+    }
+}
+
+// 轮播页面1 的初始 状态
+.scroll-page1-layout {
+    .page1 {
+        .bg {
+            opacity: 0;
+        }
+        .person {
+            opacity: 0;
+        }
+        .message-bg {
+            opacity: 0;
+        }
+    }
+    .page2 {
+        .bg {
+            opacity: 0;
+        }
+        .person {
+            opacity: 0;
+            .leg2 {
+                transform-origin: left;
+                transform: rotate(30deg);
+            }
+        }
+        .message-bg {
+            opacity: 0;
+        }
+    }
+    .page3 {
+        .bg {
+            opacity: 0;
+        }
+        .person {
+            opacity: 0;
+        }
+        .message-bg {
+            opacity: 0;
+        }
+    }
+}
+
+// 轮播页面1的 动画状态
+.scroll-page1-layout.animate {
+    // 区域1动画
+    .page1 {
+        .bg {
+            animation: rotateInAndOut 3s forwards;
+        }
+        .person {
+            opacity: 0;
+            animation: rotateInAndOut 3s .5s forwards;
+            .page1 {
+                animation: left2Right 1s infinite;
+            }
+            .page2 {
+                animation: left2Right .5s 1s infinite;
+            }
+        }
+        .message-bg {
+            animation: rotateRB 3s 1s forwards;
+        }
+    } // 动画统一比 第一页面 延迟 3.5s
+    // 
+    .page2 {
+        .bg {
+            animation: rotateInAndOut 3s 3.5s forwards;
+        }
+        .person {
+            animation: rotateInAndOut 3s 4s forwards;
+            .leg2 {
+                animation: legRotateback 1s 5s forwards;
+            }
+        }
+        .message-bg {
+            animation: rotateRB 3s 4.5s forwards;
+        }
+    }
+    .page3 {
+        .bg {
+            // 只需要 旋转进来即可
+            animation: rotateIn 0.75s 7s forwards;
+        }
+        .person {
+            // 只需要 旋转进来即可
+            animation: rotateIn 0.75s 7.5s forwards;
+            .message1 {
+                animation: shake .2s 7s infinite;
+            }
+            .message2 {
+                animation: shake .5s 7s infinite;
+            }
+            .message3 {
+                animation: shake .3s 7s infinite;
+            }
+            .message4 {
+                animation: shake 1s 7s infinite;
+            }
+        }
+        .message-bg {
+            animation: rotateRBNotOut 1s 8s forwards;
+        }
+    }
+}
+
+// 轮播也面2 的初始状态
+.scroll-page2-layout {
+    .content {
+        .bg {
+            opacity: 0;
+        }
+        .bear {
+            opacity: 0;
+            .face1 {
+                opacity: 0;
+            }
+            .face2 {
+                opacity: 0;
+            }
+        }
+        .food {
+            opacity: 0;
+        }
+        .table {
+            opacity: 0;
+        }
+    }
+}
+
+.scroll-page2-layout.animate {
+    .content {
+        .bg {
+            animation: rotateIn 0.75s forwards;
+        }
+        .bear {
+            animation: bottom2Top 1s 2s forwards;
+            .face1 {
+                animation: small2Big 1s 3s forwards;
+            }
+            .face2 {
+                animation: small2Big 1s 3s forwards;
+            }
+            .hand1 {
+                animation: leftHand .3s infinite;
+            }
+            .hand2 {
+                animation: rightHand .2s .5s infinite;
+            }
+        }
+        .food {
+            animation: top2Bottom 1s 2.5s forwards;
+        }
+        .table {
+            animation: top2Bottom 1s 1s forwards;
+        }
+    }
+}
+
+// 轮播页面3的初始状态
+.scroll-page3-layout {
+    .content {
+        .bg {
+            opacity: 0;
+        }
+        .bear {
+            opacity: 0;
+        }
+        .license {
+            opacity: 0;
+        }
+        .oil {
+            opacity: 0;
+        }
+        .evil {
+            opacity: 0;
+        }
+    }
+}
+
+.scroll-page3-layout.animate {
+    .content {
+        .bg {
+            animation: rotateIn 1s forwards;
+        }
+        .bear {
+            animation: top2Bottom 1s 1s forwards;
+        }
+        .license {
+            animation: small2Big 1s 2s forwards, shake 1s 3s infinite;
+        }
+        .oil {
+            animation: small2Big 1s 2s forwards, shake .6s 3s infinite;
+        }
+        .evil {
+            animation: small2Big 1s 2s forwards, shake 1.4s 3s infinite;
+        }
+    }
+}
+
+// 轮播页面4的初始状态
+.scroll-page4-layout {
+    .content {
+        .bg {
+            opacity: 0;
+        }
+        .bear {
+            opacity: 0;
+        }
+        .card1 {
+            opacity: 0;
+        }
+        .card2 {
+            opacity: 0;
+        }
+        .card3 {
+            opacity: 0;
+        }
+    }
+}
+
+// 轮播页面4的动画状态
+.scroll-page4-layout.animate {
+    .content {
+        .bg {
+            animation: rotateIn 1s forwards;
+        }
+        .bear {
+            animation: top2Bottom 1s 1s forwards;
+        }
+        .card1 {
+            animation: small2Big 1s 2s forwards;
+            transform-origin: right bottom;
+        }
+        .card2 {
+            animation: small2Big 1s 2s forwards;
+            transform-origin: bottom;
+        }
+        .card3 {
+            animation: small2Big 1s 2s forwards;
+            transform-origin: left bottom;
+        }
+    }
+}
+
+// 轮播页面5的初始状态
+.scroll-page5-layout {
+    .content {
+        .bg {
+            opacity: 0;
+        }
+        .bear {
+            opacity: 0;
+            .shadow {
+                opacity: 0;
+            }
+        }
+        .cloud {
+            opacity: 0;
+            .snow {
+                @include size(32,
+                32);
+                @include bg('../images/page6/snow-piece.png');
+                position: absolute;
+                bottom: 0;
+                opacity: .5; // left: 10%;
+                // &:nth-child(2) {
+                //     left: 20%;
+                // }
+                //  循环10次 
+                @for $i from 1 through 10 {
+                    &:nth-child(#{$i}) {
+                        left: $i*10%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// 轮播页面5的动画状态
+.scroll-page5-layout.animate {
+    .content {
+        .bg {
+            animation: rotateIn 1s forwards;
+        }
+        .bear {
+            animation: top2Bottom 1s 1s forwards, bearUpDown .5s 2s infinite;
+            .shadow {
+                animation: small2Big .5s 2s infinite;
+            }
+        }
+        .cloud {
+            animation: small2Big 1s forwards, shake 1s 1s infinite;
+            .snow {
+                @for $i from 1 through 10 {
+                    &:nth-child(#{$i}) {
+                        animation: snowDown 1s (1s+$i*0.1) infinite;
+                    }
+                }
+            }
+        }
+    }
+}

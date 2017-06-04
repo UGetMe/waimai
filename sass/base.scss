@@ -1,0 +1,72 @@
+// 设置公共部分
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+// 媒体查询
+@media screen and (width:320px) {
+    html {
+        font-size: (320px/20);
+    }
+}
+
+@media screen and (width:375px) {
+    html {
+        font-size: (375px/20);
+    }
+}
+
+@media screen and (width:414px) {
+    html {
+        font-size: (414px/20);
+    }
+}
+
+@media screen and (width:380px) {
+    html {
+        font-size: (380px/20);
+    }
+}
+
+@media screen and (width:360px) {
+    html {
+        font-size: (360px/20);
+    }
+}
+
+//  自定义的函数--sass的语法
+// px 2to rem
+@function p2r($size) {
+    @return $size/32*1rem;
+}
+
+// 定义混入 
+// 快速设置 宽高
+@mixin size($w, $h) {
+    width: p2r($w);
+    height: p2r($h);
+}
+
+// 快速设置 背景图片的混入
+@mixin bg($url) {
+    background: url($url)no-repeat center/100% 100%;
+}
+
+// 快速设置 图片左右居中 以及底部
+@mixin cbbg($w,$b) {
+    position: absolute;
+    left: 50%;
+    margin-left: p2r(-$w/2);
+    bottom: p2r($b);
+}

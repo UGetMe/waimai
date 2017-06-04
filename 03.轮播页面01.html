@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- 设置视口属性 -->
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>title</title>
+  <link rel="stylesheet" type="text/css" href="css/index.css" />
+</head>
+
+<body>
+  <div class="scroll-page1-layout">
+    <!-- 标题 -->
+    <div class="title">
+      <h3>测试页面</h3>
+      <p>经常有这种时候</p>
+      <div class="line"></div>
+    </div>
+    <!-- 星球-->
+    <div class="sphere"></div>
+    <!-- 熊 -->
+    <div class="bear"></div>
+    <!-- 轮播的页面 -->
+    <div class="page1">
+      <div class="bg"></div>
+      <div class="person">
+        <!--  设置文件 -->
+        <div class="file">
+          <!-- 纸张 -->
+          <div class="page1"></div>
+          <div class="page2"></div>
+        </div>
+      </div>
+      <!-- 信息框 -->
+      <div class="message-bg">
+        <div class="message"></div>
+      </div>
+    </div>
+    <!-- 轮播的页面2 -->
+    <div class="page2">
+      <div class="bg"></div>
+      <div class="person">
+        <!-- 两条腿 -->
+        <div class="leg1"></div>
+        <div class="leg2"></div>
+      </div>
+      <!-- 信息框 -->
+      <div class="message-bg">
+        <div class="message"></div>
+      </div>
+    </div>
+    <!-- 轮播的页面3 -->
+    <div class="page3">
+      <div class="bg"></div>
+      <div class="person">
+        <div class="message1"></div>
+        <div class="message2"></div>
+        <div class="message3"></div>
+        <div class="message4"></div>
+      </div>
+      <!-- 信息框 -->
+      <div class="message-bg">
+        <div class="message"></div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
+<!-- 测试代码 页面打开之后 延迟一会 为 body中的 第一个 div 添加animateclass -->
+<script type="text/javascript">
+  window.onload = function(){
+    setTimeout(function(){
+      document.querySelector('body>div').classList.add('animate');
+    },1000)
+  }
+</script>

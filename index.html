@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- 设置视口属性 -->
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>title</title>
+  <script type="text/javascript">
+    // 根据屏幕的宽度 来设置 html的 font-size
+    // 设备的宽度
+    console.log(window.screen.width);
+    // 浏览器 可用的宽度
+    // 移动端 用上下 两个都是可以
+    console.log(window.screen.availWidth);
+    // 计算 font-weight
+    var fontSize = window.screen.availWidth / 20;
+    document.querySelector('html').style.fontSize = fontSize + 'px';
+    window.onresize = function () {
+      // 计算 font-weight
+      var fontSize = window.screen.availWidth / 20;
+      document.querySelector('html').style.fontSize = fontSize + 'px';
+    }
+    // 跟媒体查询比 在移动端使用 没有优劣之分  
+    // 面试问道 媒体查询 还有 js 都回答 即可
+  </script>
+  <!-- 导入 swiper的样式 -->
+  <link rel="stylesheet" type="text/css" href="lib/swiper.min.css" />
+  <link rel="stylesheet" type="text/css" href="css/index.css" />
+</head>
+
+<body>
+
+
+  <!-- go页面  2-->
+  <div class="go-layout">
+    <!-- 云 -->
+    <div class="clouds"></div>
+    <!-- 草1 -->
+    <div class="grass1"></div>
+    <!-- 草2 -->
+    <div class="grass2"></div>
+    <!-- 按钮 -->
+    <div class="btn-container">
+      <div class="circle1"></div>
+      <div class="circle2"></div>
+    </div>
+    <!-- 外卖之路 -->
+    <div class="waimai-load">长按启动,等待送回家</div>
+    <!-- 树 -->
+    <div class="tree"></div>
+    <!-- 标题 -->
+    <div class="bear-title">
+      <div class="bear-hello"></div>
+    </div>
+    <!-- 送外卖的熊 
+       为了方便 设置动画 添加了一个 容器 来制作 从上往下的动画效果
+    -->
+    <div class="bear-box">
+      <div class="bear">
+      </div>
+      <div class="smoke"></div>
+    </div>
+  </div>
+  <!-- 加载页 1 -->
+  <div class="loading-layout">
+    <!--.rider+.progress>.step^+.info+.logo+.desc-->
+    <div class="rider"></div>
+    <div class="progress">
+      <div class="step"></div>
+    </div>
+    <div class="info"></div>
+    <div class="logo"></div>
+    <div class="desc">
+      @ 2017 Baidu WaiMai Produced
+    </div>
+  </div>
+  <!-- 下面的轮播页面 我们使用 swiper来实现 -->
+  <div class="waimai-container">
+    <div class="swiper-wrapper">
+      <div class="scroll-page1-layout swiper-slide">
+        <!-- 标题 -->
+        <div class="title">
+          <h3>生活中,</h3>
+          <p>经常有这种时候</p>
+          <div class="line"></div>
+        </div>
+        <!-- 星球-->
+        <div class="sphere"></div>
+        <!-- 熊 -->
+        <div class="bear"></div>
+        <!-- 轮播的页面 -->
+        <div class="page1">
+          <div class="bg"></div>
+          <div class="person">
+            <!--  设置文件 -->
+            <div class="file">
+              <!-- 纸张 -->
+              <div class="page1"></div>
+              <div class="page2"></div>
+            </div>
+          </div>
+          <!-- 信息框 -->
+          <div class="message-bg">
+            <div class="message"></div>
+          </div>
+        </div>
+        <!-- 轮播的页面2 -->
+        <div class="page2">
+          <div class="bg"></div>
+          <div class="person">
+            <!-- 两条腿 -->
+            <div class="leg1"></div>
+            <div class="leg2"></div>
+          </div>
+          <!-- 信息框 -->
+          <div class="message-bg">
+            <div class="message"></div>
+          </div>
+        </div>
+        <!-- 轮播的页面3 -->
+        <div class="page3">
+          <div class="bg"></div>
+          <div class="person">
+            <div class="message1"></div>
+            <div class="message2"></div>
+            <div class="message3"></div>
+            <div class="message4"></div>
+          </div>
+          <!-- 信息框 -->
+          <div class="message-bg">
+            <div class="message"></div>
+          </div>
+        </div>
+      </div>
+      <!-- 轮播页面2 -->
+      <div class="scroll-page2-layout swiper-slide">
+        <!-- 标题 -->
+        <div class="title">
+          <h3>这个时候</h3>
+          <p>如果给你送来了<br>一份好吃的东西..</p>
+          <div class="line"></div>
+        </div>
+        <!-- 星球-->
+        <div class="sphere"></div>
+        <!-- 内容部分 -->
+        <div class="content">
+          <!-- 背景 -->
+          <div class="bg"></div>
+          <!-- 熊 -->
+          <div class="bear">
+            <!-- 左右手 -->
+            <div class="hand1"></div>
+            <div class="hand2"></div>
+            <!-- 左右脸  -->
+            <div class="face1"></div>
+            <div class="face2"></div>
+          </div>
+          <div class="food"></div>
+          <div class="table"></div>
+        </div>
+      </div>
+      <div class="scroll-page3-layout swiper-slide">
+        <!-- 标题 -->
+        <div class="title">
+          <h3>这个时候</h3>
+          <p>如果有一份美味的西兰花<br>炒蛋就能够驱散热意</p>
+          <div class="line"></div>
+        </div>
+        <!-- 星球-->
+        <div class="sphere"></div>
+        <!-- 内容部分 -->
+        <div class="content">
+          <!-- 背景 -->
+          <div class="bg"></div>
+          <!-- 熊 -->
+          <div class="bear">
+          </div>
+          <div class="license"></div>
+          <div class="oil"></div>
+          <div class="evil"></div>
+        </div>
+      </div>
+      <div class="scroll-page4-layout swiper-slide">
+        <!-- 标题 -->
+        <div class="title">
+          <h3>百度外卖</h3>
+          <p>比什么吗外卖要好<br>可以试试看</p>
+          <div class="line"></div>
+        </div>
+        <!-- 星球-->
+        <div class="sphere"></div>
+        <!-- 内容部分 -->
+        <div class="content">
+          <!-- 背景 -->
+          <div class="bg"></div>
+          <!-- 熊 -->
+          <div class="bear">
+          </div>
+          <div class="card1"></div>
+          <div class="card2"></div>
+          <div class="card3"></div>
+        </div>
+      </div>
+      <div class="scroll-page5-layout swiper-slide">
+        <!-- 标题 -->
+        <div class="title">
+          <h3>无论前方</h3>
+          <p>下什么东西<br>我都会给你送过去的哦</p>
+          <div class="line"></div>
+        </div>
+        <!-- 星球-->
+        <div class="sphere"></div>
+        <!-- 内容部分 -->
+        <div class="content">
+          <!-- 背景 -->
+          <div class="bg"></div>
+          <!-- 熊 -->
+          <div class="bear">
+            <div class="shadow"></div>
+          </div>
+          <!-- 云 -->
+          <div class="cloud">
+            <div class="snow"></div>
+            <div class="snow"></div>
+            <div class="snow"></div>
+            <div class="snow"></div>
+            <div class="snow"></div>
+            <div class="snow"></div>
+            <div class="snow"></div>
+            <div class="snow"></div>
+            <div class="snow"></div>
+            <div class="snow"></div>
+            <div class="leaf"></div>
+            <div class="leaf"></div>
+            <div class="leaf"></div>
+            <div class="leaf"></div>
+            <div class="leaf"></div>
+            <div class="leaf"></div>
+            <div class="leaf"></div>
+            <div class="leaf"></div>
+            <div class="leaf"></div>
+            <div class="leaf"></div>
+          </div>
+        </div>
+      </div>
+      <div class="scroll-page6-layout swiper-slide">
+        <!-- 标题 -->
+        <div class="title">
+          <h3>丰富礼物</h3>
+          <p>买什么送什么<br>就问你怕不怕</p>
+          <div class="line"></div>
+        </div>
+        <!-- 星球-->
+        <div class="sphere"></div>
+        <!-- 内容部分 -->
+        <div class="content">
+          <!-- 背景 -->
+          <div class="bg"></div>
+          <!-- 熊 -->
+          <div class="bear">
+          </div>
+          <div class="gifts">
+            <div><img src="images/page7/gift1.png" alt=""></div>
+            <div><img src="images/page7/gift2.png" alt=""></div>
+            <div><img src="images/page7/gift3.png" alt=""></div>
+            <div><img src="images/page7/gift4.png" alt=""></div>
+            <div><img src="images/page7/gift5.png" alt=""></div>
+            <div><img src="images/page7/gift6.png" alt=""></div>
+            <div><img src="images/page7/gift7.png" alt=""></div>
+            <div><img src="images/page7/gift8.png" alt=""></div>
+            <div><img src="images/page7/gift9.png" alt=""></div>
+            <div><img src="images/page7/gift10.png" alt=""></div>
+            <div><img src="images/page7/gift11.png" alt=""></div>
+            <div><img src="images/page7/gift12.png" alt=""></div>
+          </div>
+        </div>
+      </div>
+      <div class="scroll-page7-layout swiper-slide">
+        <!-- 标题 -->
+        <div class="title">
+          <h3>我这么努力</h3>
+          <p>还是败给了你<br>亲，不要差评好不好</p>
+          <div class="line"></div>
+        </div>
+        <!-- 星球-->
+        <div class="sphere"></div>
+        <!-- 内容部分 -->
+        <div class="content">
+          <!-- 背景 -->
+          <div class="streetlight">
+            <div class="lamplight"></div>
+          </div>
+          <!-- 熊 -->
+          <div class="bear">
+          </div>
+          <div class="moto"></div>
+          <div class="share"></div>
+          <div class="url">waimai.baidu.com</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 音频标签 -->
+  <audio src='music/hlw.mp3' loop>
+
+  </audio>
+  <!-- 播放按钮-->
+  <input type="button" class='audioControl'>
+</body>
+
+</html>
+
+<!-- 导入 swiper的js -->
+<script type="text/javascript" src="lib/swiper.min.js"></script>
+
+<!-- 导入 zepto 使用zepto 来实现 dom元素操纵 -->
+<script type="text/javascript" src="lib/zepto.js"></script>
+<script type="text/javascript" src="lib/event.js"></script>
+<script type="text/javascript" src="lib/fx.js"></script>
+<script type="text/javascript" src="lib/touch.js"></script>
+<!-- fadein toggle等 动画方法的模块 -->
+<script type="text/javascript" src="lib/fx_methods.js"></script>
+
+
+<!-- 调用swiper的方法 -->
+<script type="text/javascript">
+  var swiper = new Swiper('.waimai-container', {
+    direction: 'vertical',
+    // swiper的事件中 可以接受swiper作为参数
+    onSlideChangeEnd: function (swiper) {
+      // alert(swiper.activeIndex) //切换结束时，告诉我现在是第几个slide
+      console.log(swiper.activeIndex);
+      // 逻辑6.
+      $('.swiper-slide').removeClass('animate');
+      // 逻辑7.为当前页添加animateclass
+      $('.swiper-slide').eq(swiper.activeIndex).addClass('animate');
+
+      // 判断如果是 第三页 索引是从0开始
+      if (swiper.activeIndex == 2) {
+        console.log('不要滑动了');
+        $('.swiper-slide').eq(swiper.activeIndex).addClass('swiper-no-swiping');
+      }
+      // 有没有 切换的上一页的索引值呢？
+      console.log('上一页的索引' + swiper.previousIndex);
+      // 如果上一次 显示的页面是 索引为2的那一页 说明 之前播放了 动画
+      if (swiper.previousIndex == 2) {
+        $('.swiper-slide').eq(2).find('.bear').css('background-image', 'url(images/page4/bear3.png');
+        $('.swiper-slide').eq(2).find('.license').css('background-image', 'url(images/page4/license.png').attr(
+          'style', '');
+        $('.swiper-slide').eq(2).find('.oil').css('background-image', 'url(images/page4/oil.png').attr('style',
+          '');
+        $('.swiper-slide').eq(2).find('.evil').css('background-image', 'url(images/page4/evil2.png').attr('style',
+          '');
+      }
+    }
+  });
+
+  /*
+      1.页面打开之后 稍微等一会  播放 第一页的动画
+      2.页面1动画播放完毕之后 开启第二页的动画
+      2.1为了能够点击到 第二页 动画播放完毕之后 把第一页的display none
+      3.页面2中 点击 按钮 让熊 往下 移动 变大 透明度变0
+      4.页面2按钮点击之后 播放完毕之后 把第二页整个干掉
+      5.第二个页面 隐藏之后 把 swiper中的 第一个页面的动画开启 animate -- jQuery部分
+      6.swiper页面切换完毕之后 把swiper-slide的animateclass 全部都 删除 -swiper部分
+      7.swiper页面切换完毕之后 把当前暂时的页面 添加animate class -swiper部分
+      8.当swiper滑动到了   第三页之后 禁用滑动 -swiper
+      9.点击第三页时 
+          播放一段    踢爆牌子的动画 - js中 直接绑定事件即可
+          隔一段时间 切换一个 图片
+      10.当我们第三页的动画播放完毕之后 
+            让我们的第三页 可以被滑动了 删除 这个swiper-no-swiping class即可
+      11.当我们的swiper 第三页 切换离开时 把第三页的内容 全部 还原
+          bear的 图片
+          三个牌子的 图片
+          三个牌子的 行内样式
+          - swiper中
+      12.点击播放按钮 
+          如果真在播放 那么 暂停
+            切换 背景图
+          如果暂停 那么 开始播放
+  */
+  $(function () {
+    // 逻辑 1 2 2.1
+    setTimeout(function () {
+      $('.loading-layout').addClass('animate');
+      // 有一个动画结束事件
+      // dom元素 动画播放完毕之后 会调用一个 animationend事件
+      // dom元素 过渡结束之后 会调用一个 transitionend事件
+      // oninput $('input').on('input')
+      // $('.loading-layout').transitionend(function(){})
+      $('.loading-layout').on('transitionend', function () {
+        console.log('end');
+      })
+      // 动画结束事件 在 动画播放完毕时 触发第二页的动画 
+      $('.loading-layout .rider').on('animationend', function () {
+
+        setTimeout(function () {
+          $('.go-layout').addClass('animate');
+          // console.log('rider-end');
+          $('.loading-layout').css('display', 'none');
+        }, 1000);
+      })
+    }, 1000)
+
+    // 逻辑 3 4 5 绑定zepto 提供的长按事件
+    $('.go-layout .btn-container').longTap(function () {
+      // 逻辑3 移动熊 
+      $('.bear-box').animate({
+        transform: 'translateY(100%) scale(1.5,1.5)',
+        opacity: 0
+      }, 1000, function () {
+        //  逻辑4 关闭页面2 fadeOut 默认会设置display:none
+        // 但是 当我们在回掉函数中 写了内容之后 这步操作就没有了
+        $('.go-layout').fadeOut(function () {
+          // 把 go-layout的 diplay设置为none 否则点不到
+          $(this).css('display', 'none');
+          // 逻辑5 把swiper的第一个页面的动画开启
+          $('.swiper-slide').first().addClass('animate');
+        });
+      })
+    })
+    // 逻辑9 
+    // 定义一个 数组 用来保存数据
+    var animationArr = [{
+        bear: 'url(images/page4/bear3-1-1.png)',
+        card: '.license',
+        cardUrl: 'url(images/page4/license1.png)'
+      },
+      {
+        bear: 'url(images/page4/bear3-2-1.png)',
+        card: '.oil',
+        cardUrl: 'url(images/page4/oil1.png)'
+      },
+      {
+        bear: 'url(images/page4/bear3-3-1.png)',
+        card: '.evil',
+        cardUrl: 'url(images/page4/evil21.png)'
+      }
+    ];
+    // 定义索引 来记录 数据的索引值
+    var index = 0;
+    $('.swiper-slide').eq(2).click(function () {
+      console.log('开始提牌子');
+      var id = setInterval(function () {
+        // 干掉定时器
+        if (index >= animationArr.length) {
+          clearInterval(id);
+          // 还原索引值 让下一次点击 也是从0开始即可
+          index = 0;
+          // 由于 牌子默认是有一个动画的 需要关闭动画
+          $('.license').css({
+            "animation": "none",
+            "opacity": "1"
+          });
+          $('.oil').css({
+            "animation": "none",
+            "opacity": "1"
+          });
+          $('.evil').css({
+            "animation": "none",
+            "opacity": "1"
+          });
+          // 让我的 三个 牌子 往下掉
+          $('.license').animate({
+            transform: 'translateY(200%)',
+            opacity: 0
+          }, 1000);
+          $('.oil').animate({
+            transform: 'translateY(200%)',
+            opacity: 0
+          }, 1000)
+          $('.evil').animate({
+            transform: 'translateY(200%)',
+            opacity: 0
+          }, 1000, function () {
+            $('.swiper-slide').eq(2).removeClass('swiper-no-swiping');
+          })
+
+
+          return;
+        }
+        // 通过索引 获取 对应的数据
+        var obj = animationArr[index];
+        // 更改 对应的元素的 内容
+        console.log($('.swiper-slide').eq(2).find('.bear'));
+        console.log($('.swiper-slide').eq(2).find(obj.card));
+        $('.swiper-slide').eq(2).find('.bear').css('background-image', obj.bear);
+        $('.swiper-slide').eq(2).find(obj.card).css('background-image', obj.cardUrl);
+        // 索引值 ++
+        index++;
+      }, 1000)
+    })
+
+    // 播放按钮逻辑
+    $('.audioControl').click(function () {
+      // audio.play .pause 都是 dom元素的语法
+      var audio = $('audio')[0];
+
+      if (audio.paused == true) {
+        console.log('暂停中');
+        audio.play();
+        $(this).css('background-image', 'url(images/play.png)');
+      } else {
+        audio.pause();
+        $(this).css('background-image', 'url(images/pause.png)');
+
+      }
+    })
+  })
+</script>

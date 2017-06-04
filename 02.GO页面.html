@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- 设置视口属性 -->
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>title</title>
+  <link rel="stylesheet" type="text/css" href="css/index.css" />
+</head>
+
+<body>
+  <div class="go-layout">
+    <!-- 云 -->
+    <div class="clouds"></div>
+    <!-- 草1 -->
+    <div class="grass1"></div>
+    <!-- 草2 -->
+    <div class="grass2"></div>
+    <!-- 按钮 -->
+    <div class="btn-container">
+      <div class="circle1"></div>
+      <div class="circle2"></div>
+    </div>
+    <!-- 外卖之路 -->
+    <div class="waimai-load">长按启动,等待送回家</div>
+    <!-- 树 -->
+    <div class="tree"></div>
+    <!-- 标题 -->
+    <div class="bear-title">
+      <div class="bear-hello"></div>
+    </div>
+    <!-- 送外卖的熊 
+       为了方便 设置动画 添加了一个 容器 来制作 从上往下的动画效果
+    -->
+    <div class="bear-box">
+      <div class="bear">
+      </div>
+      <div class="smoke"></div>
+    </div>
+  </div>
+</body>
+
+</html>
+<script type="text/javascript">
+  setTimeout(function () {
+    document.querySelector('.go-layout').classList.add('animate');
+  }, 1000)
+</script>
